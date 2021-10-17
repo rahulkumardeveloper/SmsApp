@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmsApp by jquery</title>
+</head>
+<script src="jquery-3.6.0.min.js"></script>
+<style>
+    div {
+
+        margin: auto;
+        width: 400px;
+        border: 1px grey solid;
+        padding-left: 20px;
+        padding-bottom: 20px;
+        background-color: lightgrey;
+    }
+</style>
+<script>
+    $(document).ready(function () {
+        let charlength = 1000;
+        $("#textarea").keyup(function () {
+            $("#textarea").css('backgroundcolor:red;')
+            let inputtextlength = $("#textarea").val().length;
+            $("#count").text(charlength - inputtextlength);
+
+        });
+        $("#reset").click(()=>{
+            $("#count").text(charlength);
+            
+        })
+    })
+</script>
+
+<body>
+    <div>
+        <form action="">
+        <h1>Sms App......</h1>
+        <textarea name="textarea1" id="textarea" cols="45" rows="10"></textarea><br>
+        <h3>The Remaining Chracter: <p id="count"></p>
+        </h3>
+        <input type="reset" value="Reset" id="reset">
+    </form>
+    </div>
+    
+</body>
+
+</html>
